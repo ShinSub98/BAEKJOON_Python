@@ -81,3 +81,31 @@ for i in range(n):
             print("YES")
         else: print("NO")
     else: print("NO")
+
+
+# 4949번
+def str(a):
+    stack = []
+    for i in a:
+        if i == "(" or i == "[":
+            stack.append(i)
+        
+        elif i == ")":
+            if len(stack) == 0 or stack[-1] != "(":
+                return "no"
+            else: stack.pop()
+        
+        elif i == "]":
+            if len(stack) == 0 or stack[-1] != "[":
+                return "no"
+            else: stack.pop()
+    
+    if len(stack) != 0: return "no"
+    else: return "yes"
+            
+
+while True:
+    a = input()
+    if a == ".":
+        break
+    print(str(a))
