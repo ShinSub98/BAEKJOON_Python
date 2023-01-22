@@ -32,3 +32,25 @@ for i in range(0, n):
             if len(stack) == 0:
                 print(-1)
             else: print(stack[-1])
+
+
+# 10773번
+import sys
+input = sys.stdin.readline
+
+stack = []
+
+n = int(input())
+
+for i in range(0, n):
+    money = int(input())
+
+    if money == 0:
+        stack.pop()
+    else: stack.append(money)
+
+sum = 0
+for i in stack:
+    sum += i
+
+print(sum)
