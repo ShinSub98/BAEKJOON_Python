@@ -54,3 +54,30 @@ for i in stack:
     sum += i
 
 print(sum)
+
+
+#9012번
+import sys
+input = sys.stdin.readline
+
+n = int(input())
+
+for i in range(n):
+    stack = []
+    t = True # t: 성공 여부
+    a = input()
+    for j in a:
+        if j == "(": # 좌괄호 입력
+            stack.append(j)
+    
+        elif j == ")":# 우괄호 입력
+            if len(stack) != 0:
+                stack.pop()
+            else: t = False
+            
+    
+    if len(stack) == 0:
+        if t == True:
+            print("YES")
+        else: print("NO")
+    else: print("NO")
