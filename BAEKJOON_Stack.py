@@ -120,23 +120,23 @@ stack = []
 progression = []
 plus_minus = []
 n = int(input())
-top = 0
+ceiling = 0 # stack에서 나온 최대값
 
 for i in range(1, n+1):
     x = int(input())
-    if top < x:
-        while top < x:
-            top += 1
-            stack.append(top)
+    if ceiling < x: # ceiling이 x에 못 미쳤을 경우
+        while ceiling < x:
+            ceiling += 1
+            stack.append(ceiling)
             plus_minus.append("+")
         stack.pop()
         plus_minus.append("-")
 
-    elif top == x:
+    elif ceiling == x: # ceiling과 x가 같을 경우
         stack.pop()
         plus_minus.append("-")
 
-    elif stack and stack[-1] == x:
+    elif stack and stack[-1] == x: # top = x < ceiling 인 경우
         stack.pop()
         plus_minus.append("-")
 
