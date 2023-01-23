@@ -109,3 +109,38 @@ while True:
     if a == ".":
         break
     print(str(a))
+
+
+# 1874번
+
+import sys
+input = sys.stdin.readline
+
+stack = []
+progression = []
+plus_minus = []
+n = int(input())
+top = 0
+
+for i in range(1, n+1):
+    x = int(input())
+    if top < x:
+        while top < x:
+            top += 1
+            stack.append(top)
+            plus_minus.append("+")
+        stack.pop()
+        plus_minus.append("-")
+
+    elif top == x:
+        stack.pop()
+        plus_minus.append("-")
+
+    elif stack and stack[-1] == x:
+        stack.pop()
+        plus_minus.append("-")
+
+if n*2 == len(plus_minus):
+    for i in plus_minus:
+        print(i)
+else: print("NO")
