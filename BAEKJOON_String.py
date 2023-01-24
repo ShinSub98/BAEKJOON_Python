@@ -35,3 +35,66 @@ for i in alphabet:
 	if check == True:
 		print(x, end=" ")
 	else: print(-1, end= " ")
+
+
+# 2675번
+n = int(input())
+
+for i in range(n):
+	x = input().split()
+	x[0] = int(x[0])
+	for j in x[1]:
+		for k in range(x[0]):
+			print(j,end="")
+	if i != n-1:
+		print("")
+
+
+# 1152번
+s = input().split(sep = " ")
+
+front = 0
+
+for i in s:
+	if i == "":
+		front+=1
+
+print(len(s) - front)
+
+
+# 2908번
+x, y = input().split()
+
+n = int(x[2]+x[1]+x[0])
+m = int(y[2]+y[1]+y[0])
+
+if n>m:
+	print(n)
+else: print(m)
+
+
+# 5622번
+s = input()
+
+sum = 0
+
+for i in s:
+	if i == 'A' or i == 'B' or i == 'C': sum += 3
+
+	elif i == 'D' or i == 'E' or i == 'F': sum += 4
+
+	elif i == 'G' or i == 'H' or i == 'I': sum += 5
+
+	elif i == 'J' or i == 'K' or i == 'L': sum += 6
+
+	elif i == 'M' or i == 'N' or i == 'O': sum += 7
+
+	elif i == 'P' or i == 'Q' or i == 'R' or i == 'S': sum += 8
+
+	elif i == 'T' or i == 'U' or i == 'V': sum += 9
+
+	elif i == 'W' or i == 'X' or i == 'Y' or i == 'Z': sum += 10
+
+	else: sum+= 11
+
+print(sum)
