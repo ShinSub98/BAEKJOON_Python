@@ -110,3 +110,41 @@ for i in permutation:
     if i != permutation[-1]:
         print(f"{i}, ", end="")
     else: print(f"{i}>")
+
+
+# 1966번
+import sys
+input = sys.stdin.readline
+
+def printer(b, target_index):
+    front_index = 0
+    count = 0 # 출력한 문서 수
+    max_val = max(b)
+
+    while True:
+        if b[front_index] != max_val: # 뒤로 넘겨야 할 때
+            if front_index == target_index: # target을 넘기면
+                target_index = len(b) # target_index를 수정
+            b.append(b[front_index])
+            front_index += 1
+
+        else: # 출력해야 할 때
+            if front_index != target_index: # target을 출력하는 것이 아닐 때
+                front_index += 1
+                max_val = max(b[front_index:]) # max값도 수정
+                count += 1
+            else: # target을 출력할 때
+                return count + 1
+
+
+
+n = int(input())
+
+for i in range(n):
+    a = input().split() # a[0]: 문서 개수, a[1]: target
+    a = list(map(int, a))
+
+    b = input().split()
+    b = list(map(int, b)) # 프린터 queue
+
+    print(printer(b, a[1]))
