@@ -148,3 +148,35 @@ for i in range(n):
     b = list(map(int, b)) # 프린터 queue
 
     print(printer(b, a[1]))
+
+
+## Circular Queue
+class CircularQueue:
+	def __init__(self, max):
+		self.items = []
+		self.max = max
+		self.front = 0
+		self.rear = 0 # (self.rear)%self.max = rear_index
+	
+	def empty(self):
+		return self.front == self.rear
+	
+	def full(self):
+		return (self.rear + 1)%self.max == self.front
+	
+	def clear(self):
+		self.front = self.rear
+	
+	def enqueue(self, x):
+		if not self.full():
+			self.rear = (self.rear + 1)%self.max
+			self.items[self.rear] = x
+
+	def dequeue(self):
+		if not self.empty():
+			self.front = (self.front + 1)%self.max
+			return self.items[self.front]
+	
+	def peek(self): # front 다음 값 반환
+		if not self.empty():
+			return self.items[(self.front+1)%self.max]
