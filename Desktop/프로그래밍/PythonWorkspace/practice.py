@@ -1,5 +1,5 @@
-stack = []
+a = 1
+b = 2
 
-if stack:
-    print("+")
-else: print("-")
+a, b = b, a
+print(a, b)
