@@ -149,3 +149,46 @@ for i in range(n):
 		count += 1
 
 print(count)
+
+# 2941번
+import sys
+input = sys.stdin.readline().rstrip
+
+s = list(input())
+count = 0
+
+while len(s) != 0:
+	if len(s) >= 3:
+		if s[0] + s[1] + s[2] == "dz=":
+			count +=1
+			del s[0:3]
+			continue
+		
+		elif s[0]+s[1] == "c=" or s[0]+s[1] == "c-" or s[0]+s[1] == "d-" or s[0]+s[1] == "lj" or s[0]+s[1] == "nj" or s[0]+s[1] ==  "s=" or s[0]+s[1] ==  "z=":
+			count += 1
+			del s[0:2]
+			continue
+
+		else:
+			count += 1
+			del s[0]
+			continue
+
+	else:
+		if len(s) == 2:
+			if s[0]+s[1] == "c=" or s[0]+s[1] == "c-" or s[0]+s[1] == "d-" or s[0]+s[1] == "lj" or s[0]+s[1] == "nj" or s[0]+s[1] ==  "s=" or s[0]+s[1] ==  "z=":
+				count += 1
+				del s[0:2]
+				continue
+			else:
+				count += 1
+				del s[0]
+				continue
+
+		else:
+			count += 1
+			del s[0]
+			continue
+
+
+print(count)
