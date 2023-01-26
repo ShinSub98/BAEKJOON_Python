@@ -98,3 +98,31 @@ for i in s:
 	else: sum+= 11
 
 print(sum)
+
+# 1157번
+import sys
+input = sys.stdin.readline().rstrip
+
+str = input().upper()
+
+alphabet = [] # 단어 속 알파벳
+counts = [] # 알파벳 개수
+
+for i in str:
+	alphabet.append(i)
+
+alphabet = list(set(alphabet))
+
+for i in alphabet:
+	counts.append(str.count(i))
+
+if len(counts) >= 2:
+	# 같은 수가 두개 있을 때
+	if sorted(counts)[-1] == sorted(counts)[-2]:
+		print("?")
+
+	else:
+		print(alphabet[counts.index(max(counts))])
+
+else:
+	print(alphabet[0])
