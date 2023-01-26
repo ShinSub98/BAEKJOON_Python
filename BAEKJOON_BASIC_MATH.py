@@ -102,3 +102,20 @@ for i in range(0, n//5+2): #5키로 설탕
 if bChanged == False:
 	print(-1)
 else: print(min)
+
+# 2775번
+t = int(input())
+
+for i in range(t):
+	floor = int(input())
+	ho = int(input())
+	
+	lst = []
+	for j in range(1, ho+1):
+		lst.append(j)
+	
+	for j in range(floor-1):
+		for k in range(len(lst)-1, 0, -1):
+			lst[k] = sum(lst[:k+1])
+	
+	print(sum(lst))
