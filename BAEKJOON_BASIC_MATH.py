@@ -51,3 +51,54 @@ if n%2==1: # 홀수줄이면
 	print(f"{a}/{x}")
 else:
 	print(f"{x}/{a}")
+
+
+# 2869번
+import sys
+input = sys.stdin.readline().rstrip
+
+a, b, v = map(int, input().split())
+
+up = a - b # 하루 올라갈 수 있는 높이
+
+oneDayBefore = v - a
+
+if oneDayBefore%up == 0:
+	print((oneDayBefore//up)+1)
+else: print((oneDayBefore//up)+2)
+
+# 10250번
+t = int(input())
+
+for i in range(t):
+	h, w, n = map(int, input().split())
+	
+	if n%h == 0:
+		height = h
+	else: height = n%h
+
+	if n%h == 0:
+		width = n//h
+	else: width = n//h+1
+
+
+	if width < 10:
+		print(f"{height}0{width}")
+	else: print(f"{height}{width}")
+
+
+# 2839번
+n = int(input())
+
+min = n
+bChanged = False
+
+for i in range(0, n//5+2): #5키로 설탕
+	for j in range(0, n//3+2): #3키로 설탕
+		if 5*i + j*3 == n and min > i+j:
+				min = i+j
+				bChanged = True
+
+if bChanged == False:
+	print(-1)
+else: print(min)
