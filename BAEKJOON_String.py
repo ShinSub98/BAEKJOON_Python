@@ -126,3 +126,26 @@ if len(counts) >= 2:
 
 else:
 	print(alphabet[0])
+
+
+# 1316번
+import sys
+input = sys.stdin.readline
+
+n = int(input())
+count = 0
+
+for i in range(n):
+	str = input().rstrip()
+	group = 1
+	for j in range(len(str)-1):
+		if str[j] != str[j+1]:
+			group +=1
+	
+	
+	alphabet = len(set(str)) # 알파벳 개수
+	
+	if alphabet == group:
+		count += 1
+
+print(count)
