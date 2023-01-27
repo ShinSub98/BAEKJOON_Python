@@ -119,3 +119,111 @@ for i in range(t):
 			lst[k] = sum(lst[:k+1])
 	
 	print(sum(lst))
+
+
+# 1978번
+n = int(input())
+
+lst = list(map(int, input().split(sep=" ")))
+count = 0
+
+for i in lst:
+	check = True
+	if i == 1:
+		continue
+	for j in range(2, i):
+		if i%j == 0:
+			check = False
+	
+	if check: count += 1
+
+print(count)
+
+# 2581번
+m = int(input())
+n = int(input())
+
+lst = []
+
+for i in range(m, n+1):
+	check = True # 소수면 True로
+
+	if i == 1:
+		continue
+	else:
+		for j in range(2, i):
+			if i%j == 0:
+				check = False
+				break
+	
+	if check:
+		lst.append(i)
+
+if lst:
+	print(sum(lst))
+	print(lst[0])
+else: print(-1)
+
+
+# 11653번
+n = int(input())
+
+if n != 1:
+	while True:
+		check = False
+		for i in range(2, n):
+			if n%i == 0:
+				n = int(n/i)
+				print(i)
+				check = True
+				break
+		
+		if check == False:
+			print(n)
+			break
+
+
+# 1929번
+import sys
+input = sys.stdin.readline().rstrip
+
+m, n = map(int, input().split())
+
+for i in range(m, n+1):
+	if i == 1:
+		continue
+	check = True
+	for j in range(2, int(i**0.5)+1):
+		if i%j == 0:
+			check = False
+			break
+	if not check: continue
+	else: print(i)
+
+
+# 4948번
+lst = list(range(2, 246912))
+prime = []
+
+for i in lst:
+    if i >= 4 and i%2 == 0:
+        continue
+    else:
+        check = True
+        for j in range(2, int(i**0.5)+1):
+            if i%j == 0:
+                check = False
+                break
+        
+        if not check: continue
+        else: prime.append(i)
+
+while True:
+    count = 0
+    n = int(input())
+    if n == 0:
+        break
+    for i in prime:
+        if n < i <= 2*n:
+            count += 1
+    print(count)
