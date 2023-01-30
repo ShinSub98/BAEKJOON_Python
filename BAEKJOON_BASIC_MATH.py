@@ -227,3 +227,26 @@ while True:
         if n < i <= 2*n:
             count += 1
     print(count)
+
+
+# 9020번
+t = int(input())
+
+def sosu(x):
+    for i in range(2, int(x**0.5)+1):
+        if x%i == 0:
+            return False
+    return True
+
+for s in range(t):
+    x = int(input())
+
+    a, b = int(x/2), int(x/2)
+    while True:
+        if sosu(a) == True:
+            if sosu(b) == True:
+                print(a, b)
+                break
+        
+        a -= 1
+        b += 1
