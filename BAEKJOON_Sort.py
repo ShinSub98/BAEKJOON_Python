@@ -156,3 +156,17 @@ people.sort(key=lambda x:x [0], reverse = False)
 
 for i in people:
     print(i[0], i[1])
+
+
+# 18870번
+import sys
+input = sys.stdin.readline
+
+n = int(input())
+nums = list(map(int, input().split()))
+
+nums2 = sorted(set(list(nums)))
+dic = {nums2[i]: i for i in range(len(nums2))}
+
+for i in nums:
+    print(dic[i], end=" ")
