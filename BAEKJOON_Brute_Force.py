@@ -16,3 +16,56 @@ for i in range(0, n-2):
                 result = sum
 
 print(result)
+
+
+# 2231
+n = int(input())
+
+self = 0
+
+for i in range(n):
+    sum = i
+    i = str(i)
+    for j in i:
+        sum += int(j)
+    if sum == n:
+        self = i
+        break
+
+print(self)
+
+# 7568
+n = int(input())
+
+people = []
+
+for i in range(n):
+    people.append(list(map(int, input().split())))
+
+rank = [1]*n
+
+for i in range(len(people)-1):
+    for j in range(i+1, len(people)):
+        if people[i][0]>people[j][0] and people[i][1]>people[j][1]:
+            rank[j] += 1
+        if people[i][0]<people[j][0] and people[i][1]<people[j][1]:
+            rank[i] += 1
+
+for i in rank:
+    print(i, end = " ")
+
+
+# 1436
+n = int(input())
+count = 0
+num = 665
+
+while True:
+    num += 1
+    if str(num).count("666") != 0:
+        count += 1
+    
+    if count == n:
+        break
+
+print(num)
