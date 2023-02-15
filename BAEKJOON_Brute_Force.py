@@ -69,3 +69,54 @@ while True:
         break
 
 print(num)
+
+
+# 1018
+height, width = map(int, input().split())
+plate = []
+
+white = "WBWBWBWB"
+black = "BWBWBWBW"
+
+check_W = [white, black, white, black, white, black, white, black]
+check_B = [black, white, black, white, black, white, black, white]
+
+for i in range(height):
+    plate.append(input())
+
+best = 64
+
+for h in range(height-7):
+    for w in range(width-7):
+        count = 0
+
+        test = []
+        test.append(plate[h][w:w+8])
+        test.append(plate[h+1][w:w+8])
+        test.append(plate[h+2][w:w+8])
+        test.append(plate[h+3][w:w+8])
+        test.append(plate[h+4][w:w+8])
+        test.append(plate[h+5][w:w+8])
+        test.append(plate[h+6][w:w+8])
+        test.append(plate[h+7][w:w+8])
+
+        for i in range(8):
+            for j in range(8):
+                if test[i][j] != check_W[i][j]:
+                    count += 1
+        
+        if best > count:
+            best = count
+
+        count = 0
+
+        for i in range(8):
+            for j in range(8):
+                if test[i][j] != check_B[i][j]:
+                    count += 1
+        
+        if best > count:
+            best = count
+    
+
+print(best)
