@@ -29,3 +29,37 @@ for i in num_M:
 
 answer = " ".join(map(str, lst))
 print(answer)
+
+
+# 14425
+n, m = map(int, input().split())
+
+lst1 = []
+lst2 = []
+
+for i in range(n):
+    lst1.append(input())
+for i in range(m):
+    lst2.append(input())
+
+lst1.sort()
+lst2.sort()
+
+count = 0
+
+for i in lst2:
+    left = 0
+    right = n-1
+
+    while left <= right:
+        mid = (left+right)//2
+
+        if lst1[mid] == i:
+            count += 1
+            break
+        elif lst1[mid] > i:
+            right = mid - 1
+        else:
+            left = mid + 1
+
+print(count)
