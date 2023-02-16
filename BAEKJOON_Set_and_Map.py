@@ -101,3 +101,33 @@ for i in strN:
 print(len(lst))
 for i in lst:
     print(i)
+
+
+# 1269
+n, m = map(int, input().split())
+
+numN = list(map(int, input().split()))
+numN.sort()
+
+numM = list(map(int, input().split()))
+
+count = n+m
+
+for i in range(m):
+    left = 0
+    right = n-1
+
+    while left <= right:
+        mid = (left+right)//2
+
+        if numN[mid] == numM[i]:
+            count -= 2
+            break
+
+        elif numN[mid] < numM[i]:
+            left = mid+1
+
+        else:
+            right = mid-1
+
+print(count)
