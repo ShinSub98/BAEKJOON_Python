@@ -63,3 +63,41 @@ for i in lst2:
             left = mid + 1
 
 print(count)
+
+
+# 1764
+n, m = map(int, input().split())
+
+strN = []
+strM = []
+
+for i in range(n):
+    strN.append(input())
+strN.sort()
+
+for i in range(m):
+    strM.append(input())
+strM.sort()
+
+lst = []
+
+for i in strN:
+    left = 0
+    right = m-1
+
+    while left <= right:
+        mid = (left+right)//2
+
+        if strM[mid] == i:
+            lst.append(i)
+            break
+            
+        elif strM[mid] < i:
+            left = mid + 1
+        
+        else:
+            right = mid - 1
+
+print(len(lst))
+for i in lst:
+    print(i)
