@@ -131,3 +131,17 @@ for i in range(m):
             right = mid-1
 
 print(count)
+
+
+# 11478번
+str = input()
+n = len(str)
+
+lst = []
+
+for i in range(n):
+    for j in range(i+1, n+1):
+        lst.append(str[i:j])
+
+lst = set(lst)
+print(len(lst))
