@@ -145,3 +145,25 @@ for i in range(n):
 
 lst = set(lst)
 print(len(lst))
+
+# 1620
+import sys
+input = sys.stdin.readline
+
+n, m = map(int, input().rstrip().split())
+
+dict = {}
+
+for i in range(1, n+1):
+    a = input().rstrip()
+
+    dict[i] = a
+    dict[a] = i
+
+for i in range(m):
+    a = input().rstrip()
+
+    if a.isdigit():
+        print(dict[int(a)])
+    else:
+        print(dict[a])

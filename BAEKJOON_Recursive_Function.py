@@ -36,3 +36,28 @@ t = int(input())
 for i in range(t):
     s = input()
     print(isPalindrome(s))
+
+
+# 2447
+n = int(input())
+
+def draw(m):
+    if m == 3:
+        return ["***", "* *", "***"]
+    
+    else:
+        lst = draw(m//3)
+        paper = []
+
+        for i in lst:
+            paper.append(i*3)
+        
+        for i in lst:
+            paper.append(i + " "*(m//3) + i)
+        
+        for i in lst:
+            paper.append(i*3)
+        
+        return paper
+
+print("\n".join(draw(n)))
