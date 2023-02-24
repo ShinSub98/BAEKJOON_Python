@@ -40,3 +40,26 @@ while True:
             print("right")
         else:
             print("wrong")
+
+
+# 2477
+dens = int(input())
+
+dir = []
+size = []
+
+for i in range(6):
+    a, b = map(int, input().split())
+
+    dir.append(a)
+    size.append(b)
+
+
+for i in range(6):
+    if dir[i] == dir[(i+2)%6] and dir[(i+1)%6] == dir[(i+3)%6]:
+        start = i
+        break
+
+area = size[(i+4)%6]*size[(i+5)%6] - size[(i+1)%6]*size[(i+2)%6]
+
+print(area*dens)
