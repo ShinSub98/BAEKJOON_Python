@@ -167,3 +167,35 @@ for i in range(m):
         print(dict[int(a)])
     else:
         print(dict[a])
+
+
+# 10816
+cnt = {}
+
+def bs(lst, left, right, val):
+    if left>right:
+        return 0
+
+    mid = (left+right)//2
+
+    if lst[mid] == val:
+        return cnt.get(val)
+    elif lst[mid] > val:
+        return bs(lst, left, mid-1, val)
+    else:
+        return bs(lst, mid+1, right, val)
+
+sn = int(input())
+snLst = sorted(list(map(int, input().split())))
+
+n = int(input())
+nLst = map(int, input().split())
+
+for i in snLst:
+    if i in cnt:
+        cnt[i] += 1
+    else:
+        cnt[i] = 1
+
+for i in nLst:
+    print(bs(snLst, 0, sn-1, i), end = ' ')
