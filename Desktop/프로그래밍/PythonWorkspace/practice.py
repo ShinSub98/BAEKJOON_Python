@@ -1,5 +1,6 @@
-a = 1
-b = 2
+a = [1,2,3,4]
+b = []
 
-a, b = b, a
-print(a, b)
+b.append(a.pop())
+print(a)
+print(b)
