@@ -63,3 +63,45 @@ for i in range(6):
 area = size[(i+4)%6]*size[(i+5)%6] - size[(i+1)%6]*size[(i+2)%6]
 
 print(area*dens)
+
+
+# 1002
+t = int(input())
+
+for i in range(t):
+    x1, y1, r1, x2, y2, r2 = map(int, input().split())
+
+    # 같은 위치
+    if x1==x2 and y1==y2:
+        if r1==r2==0:
+            print(1)
+        elif r1 == r2 and r1 != 0 and r2 != 0:
+            print(-1)
+        else:
+            print(0)
+    
+    else:
+        dis = (abs(x1-x2)**2 + abs(y1-y2)**2)**(1/2)
+        M = max(r1, r2)
+        m = min(r1, r2)
+
+        if M > dis:
+            if dis + m > M:
+                print(2)
+            elif dis + m == M:
+                print(1)
+            else:
+                print(0)
+        
+        elif M == dis:
+            if m != 0:
+                print(2)
+            else:
+                print(1)
+        
+        else: # M < dis
+            if r1 + r2 > dis:
+                print(2)
+            elif r1 + r2 == dis:
+                print(1)
+            else: print(0)
