@@ -105,3 +105,24 @@ for i in range(t):
             elif r1 + r2 == dis:
                 print(1)
             else: print(0)
+
+
+# 1004
+t = int(input())
+
+for i in range(t):
+    x1, y1, x2, y2 = map(int, input().split())
+    n = int(input())
+    lst = []
+    for j in range(n):
+        lst.append(list(map(int, input().split())))
+    sum = 0
+    for j in lst:
+        dis1 = (abs(x1-j[0])**2+abs(y1-j[1])**2)**(1/2)
+        dis2 = (abs(x2-j[0])**2+abs(y2-j[1])**2)**(1/2)
+        
+        if j[2]>dis1 and j[2]<dis2:
+            sum += 1
+        elif j[2]<dis1 and j[2]>dis2:
+            sum += 1
+    print(sum)
