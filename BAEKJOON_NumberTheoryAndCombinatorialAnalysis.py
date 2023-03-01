@@ -98,3 +98,37 @@ for i in range(len(fac)-1, -1, -1):
         break
 
 print(sum)
+
+
+# 11050
+a, b = map(int, input().split())
+
+sum1 = 1
+sum2 = 1
+
+for i in range(b):
+    sum1 *= a
+    a -= 1
+
+for i in range(1, b+1):
+    sum2 *= i
+
+print(sum1//sum2)
+
+
+# 11051
+a, b = map(int, input().split())
+
+sum1 = 1
+sum2 = 1
+
+for i in range(b):
+    sum1 *= a
+    a -= 1
+
+for i in range(1, b+1):
+    sum2 *= i
+
+answer = sum1//sum2
+
+print(answer%10007)
