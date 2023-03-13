@@ -80,3 +80,34 @@ for q in range(t):
             break
         elif not check(n):
             n += 1
+
+
+# 2485
+def gcd(a,b):
+    while a*b != 0:
+        a, b = b%a, a
+    return b
+
+t = int(input())
+
+a = int(input())
+start = a
+
+interval = []
+
+for i in range(t-1):
+    b = int(input())
+    interval.append(b-a)
+    a = b
+length = b-start
+
+interval = list(set(interval))
+
+gcdTrees = interval[0]
+
+for i in range(1, len(interval)):
+    gcdTrees = gcd(gcdTrees, interval[i])
+
+answer = (length//gcdTrees)-t +1
+
+print(answer)
