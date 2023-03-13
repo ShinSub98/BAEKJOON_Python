@@ -57,3 +57,26 @@ for q in range(t):
             count+=1
 
     print(count)
+
+
+# 4134
+def check(x):
+    for i in range(3, int(x**0.5)+1):
+        if x%i == 0:
+            return False
+    return True
+
+t = int(input())
+
+for q in range(t):
+    n = int(input())
+    if n <= 2:
+        print(2)
+        continue
+
+    while True:
+        if check(n):
+            print(n)
+            break
+        elif not check(n):
+            n += 1
