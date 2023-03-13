@@ -33,3 +33,27 @@ if gcd(num1, num2) != 1:
         num1, num2 = num1//gcd(num1, num2), num2//gcd(num1, num2)
 
 print(num1, num2)
+
+
+# 17103
+primes = []
+arr = [False, False] + [True]*999999
+
+for i in range(2, len(arr)):
+    if arr[i]:
+        primes.append(i)
+    for j in range(2*i, len(arr), i):
+        arr[j] = False
+
+t = int(input())
+
+for q in range(t):
+    n = int(input())
+    count = 0
+    for i in primes:
+        if i >= n:
+            break
+        if arr[n-i] and i <= n-i:
+            count+=1
+
+    print(count)
