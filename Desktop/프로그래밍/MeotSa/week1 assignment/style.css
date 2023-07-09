@@ -1,0 +1,265 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: #0066FF;
+}
+
+a:link, a:visited{
+    text-decoration: none;
+    color: black;
+}
+
+.container{
+    width: 1200px;
+    margin: 0 auto;
+}
+
+nav{
+    height: 80px;
+    line-height: 80px;
+}
+
+nav::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+
+.nav-logo img{
+    overflow: hidden;
+    height: 23px;
+    float: left;
+    margin-right: 0;
+    margin-top: 25px;
+}
+
+nav div .service{
+    float: right;
+    margin-top: auto;
+    font-size: 13px;
+    height: 13px;
+}
+
+.hd{
+    margin-top: 100px;
+    width: 50rem;
+}
+
+.main-text1{
+    color: #cad8fb;
+    font-size: 15px;
+}
+
+.main-text2{
+    margin: 0;
+    color:white;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.artc-img img{
+    float: left;
+    margin-left: 20px;
+    height: 530px;
+    margin-right: 15rem;
+}
+
+.sec::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.texts{
+    float: left;
+    margin-top: 5rem;
+    width: 25rem;
+}
+
+.loginBox{
+    margin-top: 90px;
+    float: right;
+    width: 29rem;
+    height: 35rem;
+    background-color: #F4F4F4;
+    border-radius: 20px;
+}
+
+.loginBox-1{
+    float: left;
+    background-color: white;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    width: 14.5rem;
+    height: 3rem;
+    text-align: center;
+}
+
+.loginBox-1 p{
+    color: #0066FF;
+    font-weight: bold;
+    margin: 0;
+    padding: 0.8rem;
+    font-size: 17px;
+}
+
+.loginBox-2{
+    float: left;
+    width: 14.5rem;
+    height: 3rem;
+    text-align: center;
+}
+
+.loginBox-2 p{
+    margin: 0;
+    font-size: 17px;
+    padding: 0.8rem;
+}
+
+.loginBox-3{
+    float: left;
+    height: 32rem;
+    width: 29rem;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: white;
+}
+
+.loginBox-3 .account{
+    float: left;
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    width: 14.5rem;
+}
+
+.loginBox-3 .passwordReset{
+    float: right;
+    float: right;
+    padding-top: 2rem;
+}
+
+.passwordReset a{
+    font-size: 13px;
+    padding-right: 1.5rem;
+    color: #0066FF;
+}
+
+input{
+    margin-left: 1.5rem;
+    width: 26rem;
+    height: 3rem;
+    border: none;
+    border-radius: 5px;
+    outline-color: #F4F4F4;
+    outline-style: solid;
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+    padding-left: 3rem;
+}
+
+input:focus{
+    outline-color: #0066FF;
+    outline-width: 2px;
+}
+
+input::placeholder{
+    color:rgb(195, 195, 195);
+}
+
+.password{
+    background-image: url(./Eye1.png);
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 2.5rem;
+}
+
+.mail-icon{
+    width: 1.3rem;
+    position: relative;
+    top: -2.1rem;
+    left: -12.5rem;
+}
+
+.pw-icon{
+    width: 1.3rem;
+    position: relative;
+    top: -2.3rem;
+    left: 2.2rem;
+}
+
+.login-btn{
+    background-color: #4981f8;
+    width: 26rem;
+    height: 2.7rem;
+    margin: auto auto;
+    margin-top: 2rem;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    padding-top: 0.3rem;
+    border-radius: 5px;
+}
+
+.other-account{
+    font-size: 13px;
+    text-align: center;
+    padding-top: 3rem;
+}
+
+.sites{
+    margin: auto auto;
+    width: 20rem;
+}
+
+.sites img{
+    float: left;
+    width: 3rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.sites p{
+    font-size: 13px;
+    width: 3rem;
+    float: left;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 3px;
+    text-align: center;
+}
+
+.foot{
+    float: right;
+    height: 2rem;
+    width: 29rem;
+    text-align: center;
+    padding-top: 1.5rem;
+}
+
+.foot a{
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.center-text{
+    border-left-style: solid;
+    border-right-style: solid;
+    border-width: auto;
+    border-left-color: rgb(195, 195, 195);
+    border-right-color: rgb(195, 195, 195);
+}
+
+.others{
+    font-size: 15px;
+}
