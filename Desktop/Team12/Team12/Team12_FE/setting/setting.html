@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
+    />
+    <link rel="stylesheet" href="./setting.css" />
+    <title>Setting</title>
+  </head>
+  <body>
+    <div class="background">
+      <div class="window">
+        <div class="top_area">
+          <div class="logo_area">지키미션</div>
+        </div>
+        <div class="area_56">설정</div>
+        <div class="profile_box">
+          <img class="profile" src="../images/profile.png" />
+          <div class="name">원투차차차님</div>
+          <div class="point">10020p</div>
+        </div>
+        <!-- <div class="greenLine"></div> -->
+        <div class="area_64">
+          <div>프로필 편집</div>
+          <img class="rightArrow" src="../images/right_arrow.png" />
+        </div>
+        <div class="greenLine"></div>
+        <div class="area_64">
+          <div>도움말</div>
+          <img class="rightArrow" src="../images/right_arrow.png" />
+        </div>
+        <div class="greenLine"></div>
+        <div class="area_64">
+          <div>개인정보 처리방침</div>
+          <img class="rightArrow" src="../images/right_arrow.png" />
+        </div>
+        <div class="greenLine"></div>
+        <div class="area_64">
+          <div>이용약관</div>
+          <img class="rightArrow" src="../images/right_arrow.png" />
+        </div>
+        <div class="greenLine"></div>
+        <div class="area_64">
+          <div>로그아웃</div>
+          <img class="rightArrow" src="../images/right_arrow.png" />
+        </div>
+        <div class="greenLine"></div>
+        <div class="area_64">
+          <div>탈퇴하기</div>
+          <img class="rightArrow" src="../images/right_arrow.png" />
+        </div>
+        <div class="bottom_bar"></div>
+        <div class="nav">
+          <div class="nav_select" style="right: 0"></div>
+
+          <button onclick="location.href='../main/main.html'">
+            <div class="nav_box">
+              <div class="nav_icon">
+                <img src="../images/home_icon.png" />
+              </div>
+              <div class="nav_text">홈</div>
+            </div>
+          </button>
+
+
+          <button onclick="location.href='../mission/mis.html'">
+            <div class="nav_box">
+              <div class="nav_icon">
+                <img src="../images/mis_icon.png" />
+              </div>
+              <div class="nav_text">미션</div>
+            </div>
+          </button>
+          
+          <button onclick="location.href='../challenge/cha.html'">
+            <div class="nav_box">
+              <div class="nav_icon">
+                <img src="../images/cha_icon.png" />
+              </div>
+              <div class="nav_text">챌린지</div>
+            </div>
+          </button>
+          
+          <button onclick="location.href='../setting/setting.html'">
+            <div class="nav_box">
+              <div class="nav_icon"><img src="../images/seol_select_icon.png" /></div>
+              <div class="nav_text"  style="color: #ffffff">설정</div>
+            </div>
+          </button>
+
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const access_token = localStorage.getItem("access_token");
+      fetch('https://ganzi-tkzxf.run.goorm.site/member/info/', {
+          method: 'GET',
+          headers: {
+              'Authorization': `Bearer ${access_token}`
+          }
+          })
+          .then(response => response.json())
+          .then(result => {
+              //자신의 프로필, 닉네임, 포인트 출력
+              let myImage = document.querySelector('.profile');
+              let myName = document.querySelector('.name');
+              let myPoint = document.querySelector('.point');
+              myImage.classList.add('img-circle');
+              myImage.src = `https://ganzi-tkzxf.run.goorm.site${result.data.profile_image}`;
+              myName.innerText = result.data.nickname + '님';
+              myPoint.innerText = result.data.point + 'p';
+          })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
+    />
+    <link rel="stylesheet" href="join.css" />
+    <title>Join</title>
+  </head>
+  <body>
+    <div class="background">
+      <div class="window">
+        <div class="top_area">
+          <div class="logo_area">지키미션</div>
+        </div>
+        <!-- 여기에 내용 추가하시믄 돼용 -->
+        <!-- 회원가입 -->
+        <div class="join">회원가입</div>
+        <!-- 프로필 추가 -->
+        <form
+          method="POST"
+          action="https://ganzi-tkzxf.run.goorm.site/member/signup/"
+          enctype="multipart/form-data"
+          class="join-form"
+          id="form"
+        >
+          <div class="image-box">
+            <!-- <img class="plus" src="/images/plus.png" alt=""> -->
+            <label for="chooseFile">
+              <img class="plus" src="/images/plus.png" alt="" />
+              <img
+                class="image-container"
+                src="/images/profile.png"
+                alt=""
+                id="uploaded-image"
+              />
+            </label>
+          </div>
+          <input
+            type="file"
+            id="chooseFile"
+            name="profile_image"
+            accept="image/*"
+          />
+          <!-- 이메일, 닉네임, 비밀번호, 비밀번호 확인 -->
+          <input
+            class="join-box"
+            type="email"
+            name="email"
+            id="email"
+            placeholder="이메일"
+            required
+          />
+          <input
+            class="join-box"
+            type="text"
+            name="nickname"
+            id="nickname"
+            placeholder="닉네임"
+            required
+          />
+          <input
+            class="join-box"
+            type="password"
+            name="password"
+            id="password1"
+            placeholder="비밀번호"
+            required
+          />
+          <input
+            class="join-box"
+            type="password"
+            name="password2"
+            id="password2"
+            placeholder="비밀번호 확인"
+            required
+          />
+          <button class="join-button" type="submit">가입하기</button>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      const imageInput = document.getElementById("chooseFile");
+      const uploadedImage = document.getElementById("uploaded-image");
+
+      imageInput.addEventListener("change", function () {
+        const file = imageInput.files[0];
+        if (file) {
+          const imageURL = URL.createObjectURL(file);
+          uploadedImage.src = imageURL;
+        }
+      });
+
+      var password = document.getElementById("password1"),
+        confirm_password = document.getElementById("password2");
+
+      function validatePassword() {
+        if (password.value != confirm_password.value) {
+          // 만일 두 인풋 필드값이 같지 않을 경우
+          // setCustomValidity의 값을 지정해 무조건 경고 표시가 나게 하고
+          confirm_password.setCustomValidity("비밀번호가 일치하지 않습니다.");
+        } else {
+          confirm_password.setCustomValidity("");
+        }
+      }
+
+      password.onchange = validatePassword;
+      confirm_password.onkeyup = validatePassword;
+    </script>
+
+<script>
+  const form = document.getElementById("form");
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const user = new FormData(form);
+    console.log([...user]);
+    for (var pair of user.entries()) {
+    console.log(pair[0]+ ', '+ pair[1]); 
+}
+
+    fetch("https://ganzi-tkzxf.run.goorm.site/member/signup/", {
+      method: "POST",
+      body: user
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        if (result.msg == "회원가입 성공") {
+          //회원가입 성공 시, login페이지로 이동.
+          console.log(result);
+          window.location.href = "../login/login.html";
+        } else {
+          //회원가입 실패 시, alert로 실패 내용 출력.
+          alert(result.msg);
+        }
+        console.log(result);
+      });
+  });
+</script>
+  </body>
+</html>

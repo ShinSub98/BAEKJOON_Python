@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
+    />
+    <link rel="stylesheet" href="./cha_click.css" />
+    <title>cha_click</title>
+  </head>
+  <body>
+    <div class="background">
+      <div class="window">
+        <div class="title_area_56">
+          <div class="back_btn" onClick="history.back();">
+            <img src="../images/left_arrow.png" />
+          </div>
+          <div class="title_text">챌린지</div>
+        </div>
+        <div class="mid_title">인증 유의 사항</div>
+        <div class="inzug_area">
+          <div class="inzug_black_text">
+            1. 날짜 및 시간을 식별 가능하도록 인증해주세요.<br />2. 주제에
+            벗어나지 않도록 인증해주세요
+          </div>
+          <div class="inzug_gray_text">
+            같은 사진을 반복적 또는 여러 이용자가 찍는 경우 또는 타인의 권리,
+            명예, 신용 등을 침해하는 경우 운영진의 정책에 의거해 제재를 가할 수
+            있습니다.
+          </div>
+        </div>
+        <div class="gray_line"></div>
+        <div class="me_inzug" id="div1">
+          <div class="box48">
+            <div class="box163" style="color: #93b658; margin-right: 16px">
+              나의 인증 현황
+            </div>
+            <div class="box163" id="showDiv2Button">참가자 인증 현황</div>
+            <div class="green_line"></div>
+          </div>
+          <div class="stamp_area">
+            <div class="stampNo" id="s1"></div>
+            <div class="stampNo"></div>
+            <div class="stampNo"></div>
+            <div class="stampNo"></div>
+            <div class="stampNo"></div>
+            <div class="stampNo"></div>
+            <div class="stampNo"></div>
+          </div>
+          <div class="mid_title">나의 인증 현황</div>
+          <div class="gray_area" id="output">이미지를 선택해주세요</div>
+          <form>
+            <label class="chumboo_btn">
+              파일 첨부하기
+              <input type="file" id="fileInput" style="display: none" />
+            </label>
+            <input type="submit" class="inzug_btn" value="인증하기" />
+          </form>
+        </div>
+        <div class="chamga_inzug" id="div2" style="display: none">
+          <div class="box48">
+            <div class="box163" id="showDiv1Button" style="margin-right: 16px">
+              나의 인증 현황
+            </div>
+            <div class="box163" style="color: #93b658">참가자 인증 현황</div>
+            <div class="green_line" style="right: 0px"></div>
+          </div>
+          <div class="chamgaday">1일차</div>
+          <div class="chamgalist">
+            <div class="chamga_name">김누구게</div>
+            <div class="cham_stamp_area">
+              <div
+                class="cham_stamp"
+                style="background-image: url('../images/stampO.png')"
+              ></div>
+              <div class="cham_stamp"></div>
+              <div class="cham_stamp"></div>
+              <div class="cham_stamp"></div>
+              <div class="cham_stamp"></div>
+              <div class="cham_stamp"></div>
+              <div class="cham_stamp"></div>
+            </div>
+          </div>
+          <div class="chamgalist">
+            <div class="chamga_name">십이간지짱</div>
+            <div class="cham_stamp_area">
+              <div
+                class="cham_stamp"
+                style="background-image: url('../images/stampO.png')"
+              ></div>
+              <div class="cham_stamp"></div>
+              <div class="cham_stamp"></div>
+              <div class="cham_stamp"></div>
+              <div class="cham_stamp"></div>
+              <div class="cham_stamp"></div>
+              <div class="cham_stamp"></div>
+            </div>
+          </div>
+          <div class="chamgalist">
+            <div class="chamga_name">기똥차</div>
+            <div class="cham_stamp_area">
+              <div
+                class="cham_stamp"
+                style="background-image: url('../images/stampO.png')"
+              ></div>
+              <div class="cham_stamp"></div>
+              <div class="cham_stamp"></div>
+              <div class="cham_stamp"></div>
+              <div class="cham_stamp"></div>
+              <div class="cham_stamp"></div>
+              <div class="cham_stamp"></div>
+            </div>
+          </div>
+          <div class="chamgalist">
+            <div class="chamga_name">rkswl11</div>
+            <div class="cham_stamp_area">
+              <div
+                class="cham_stamp"
+                style="background-image: url('../images/stampO.png')"
+              ></div>
+              <div class="cham_stamp"></div>
+              <div class="cham_stamp"></div>
+              <div class="cham_stamp"></div>
+              <div class="cham_stamp"></div>
+              <div class="cham_stamp"></div>
+              <div class="cham_stamp"></div>
+            </div>
+          </div>
+          <div class="chamgalist">
+            <div class="chamga_name">1등이되고싶</div>
+            <div class="cham_stamp_area">
+              <div
+                class="cham_stamp"
+                style="background-image: url('../images/stampO.png')"
+              ></div>
+              <div class="cham_stamp"></div>
+              <div class="cham_stamp"></div>
+              <div class="cham_stamp"></div>
+              <div class="cham_stamp"></div>
+              <div class="cham_stamp"></div>
+              <div class="cham_stamp"></div>
+            </div>
+          </div>
+          <div class="chamgalist">
+            <div class="chamga_name">오늘은백숙</div>
+            <div class="cham_stamp_area">
+              <div
+                class="cham_stamp"
+                style="background-image: url('../images/stampO.png')"
+              ></div>
+              <div class="cham_stamp"></div>
+              <div class="cham_stamp"></div>
+              <div class="cham_stamp"></div>
+              <div class="cham_stamp"></div>
+              <div class="cham_stamp"></div>
+              <div class="cham_stamp"></div>
+            </div>
+          </div>
+          <div class="chamgalist">
+            <div class="chamga_name">미르미르</div>
+            <div class="cham_stamp_area">
+              <div
+                class="cham_stamp"
+                style="background-image: url('../images/stampO.png')"
+              ></div>
+              <div class="cham_stamp"></div>
+              <div class="cham_stamp"></div>
+              <div class="cham_stamp"></div>
+              <div class="cham_stamp"></div>
+              <div class="cham_stamp"></div>
+              <div class="cham_stamp"></div>
+            </div>
+          </div>
+          <div class="chamgalist">
+            <div class="chamga_name">비쁠만줘요</div>
+            <div class="cham_stamp_area">
+              <div class="cham_stamp"></div>
+              <div class="cham_stamp"></div>
+              <div class="cham_stamp"></div>
+              <div class="cham_stamp"></div>
+              <div class="cham_stamp"></div>
+              <div class="cham_stamp"></div>
+              <div class="cham_stamp"></div>
+            </div>
+          </div>
+          <div class="chamgalist">
+            <div class="chamga_name">누각</div>
+            <div class="cham_stamp_area">
+              <div
+                class="cham_stamp"
+                style="background-image: url('../images/stampO.png')"
+              ></div>
+              <div class="cham_stamp"></div>
+              <div class="cham_stamp"></div>
+              <div class="cham_stamp"></div>
+              <div class="cham_stamp"></div>
+              <div class="cham_stamp"></div>
+              <div class="cham_stamp"></div>
+            </div>
+          </div>
+          <div class="chamgalist">
+            <div class="chamga_name">예그리나</div>
+            <div class="cham_stamp_area">
+              <div class="cham_stamp"></div>
+              <div class="cham_stamp"></div>
+              <div class="cham_stamp"></div>
+              <div class="cham_stamp"></div>
+              <div class="cham_stamp"></div>
+              <div class="cham_stamp"></div>
+              <div class="cham_stamp"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./cha_click.js"></script>
+  </body>
+</html>

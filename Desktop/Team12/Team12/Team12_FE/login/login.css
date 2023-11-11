@@ -1,0 +1,167 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+.background {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  margin: 0px;
+  padding: 0px;
+}
+
+.window {
+  background-color: #ffffff;
+  width: 390px;
+  height: 844px;
+  margin: 0 auto;
+  padding: 0px;
+}
+
+* {
+  font-family: Pretendard, "Noto Sans KR", sans-serif;
+}
+
+button {
+  all: unset;
+}
+
+.image-container {
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+}
+
+.image-topbar {
+  padding: 0;
+  flex-shrink: 0;
+}
+
+@font-face {
+  font-family: "PyeongChangPeace-Bold";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Bold.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+.login-logo {
+  text-align: center;
+  margin-top: 65px;
+  margin-bottom: 100px;
+  font-size: 35px;
+  font-weight: 700;
+  line-height: normal;
+  font-family: PyeongChangPeace-Bold;
+  color: #000000;
+}
+
+.login-form {
+  width: 343px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.login-box {
+  box-sizing: border-box;
+  width: 100%;
+  height: 55px;
+  border-radius: 10px;
+  border: 1.5px #348304 solid;
+  padding: 20px;
+  margin-bottom: 19px;
+}
+input::placeholder {
+  color: var(--Gray, #adb6bd);
+  font-family: Pretendard;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.login-button {
+  width: 100%;
+  height: 50px;
+  margin-top: 35px;
+  border-radius: 10px;
+  background: #93b658;
+  cursor: pointer;
+  color: #fff;
+  font-family: Pretendard;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  box-sizing: border-box;
+}
+
+.grayArea {
+  width: 210px;
+  height: 20px;
+  display: flex;
+  margin: 16px auto;
+  justify-content: space-between;
+}
+
+.bibun {
+  width: max-content;
+  height: 20px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  position: relative;
+  color: #aeaeae;
+}
+
+.g_line {
+  width: 1px;
+  height: 100%;
+  background: #aeaeae;
+}
+
+.join-member {
+  width: max-content;
+  height: 20px;
+  text-align: center;
+  color: #aeaeae;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  cursor: pointer;
+  position: relative;
+}
+
+.image-bottombar {
+  transform: rotate(179.754deg);
+}
+
+.bottom {
+  /* width: 100%; */
+  position: absolute;
+  bottom: 0;
+}
+
+.green-bar {
+  width: 100%;
+  height: 86px;
+  background-color: #93b658;
+  position: absolute;
+}
+
+.green-bar-bottom {
+  width: 100%;
+  height: 86px;
+  background-color: #93b658;
+  position: absolute;
+  bottom: 0;
+}

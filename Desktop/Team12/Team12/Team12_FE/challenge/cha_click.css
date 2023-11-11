@@ -1,0 +1,306 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+.background {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  margin: 0px;
+  padding: 0px;
+}
+
+.window {
+  background-color: #ffffff;
+  width: 390px;
+  height: 844px;
+  margin: 0 auto;
+  padding: 0px;
+}
+
+* {
+  font-family: Pretendard, "Noto Sans KR", sans-serif;
+  font-style: normal;
+  letter-spacing: -0.5px;
+  color: #000;
+}
+
+button {
+  all: unset;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.title_area_56 {
+  width: 100%;
+  height: 56px;
+  margin-top: 47px;
+  position: relative;
+  padding: 8px 0px;
+  box-sizing: border-box;
+  display: flex;
+}
+
+.back_btn {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  cursor: pointer;
+}
+
+.title_text {
+  width: 61px;
+  line-height: 40px;
+  position: relative;
+  left: 125px;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 40px;
+  letter-spacing: -0.6px;
+}
+
+.mid_title {
+  width: 100%;
+  height: 48px;
+  padding: 15px 24px;
+  box-sizing: border-box;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 18px;
+  letter-spacing: -0.45px;
+  position: relative;
+}
+
+.inzug_area {
+  width: 100%;
+  height: 75px;
+  padding: 0px 24px;
+  box-sizing: border-box;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.inzug_black_text {
+  width: 100%;
+  height: 43px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.4px;
+  position: relative;
+}
+
+.inzug_gray_text {
+  width: 100%;
+  height: 24px;
+  color: #636363;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 12px;
+  letter-spacing: -0.25px;
+  position: relative;
+  margin-top: 8px;
+}
+
+.gray_line {
+  width: 100%;
+  height: 10px;
+  background: #eee;
+  position: relative;
+}
+
+.gray_area {
+  width: 342px;
+  height: 342px;
+  margin: 0px 24px;
+  position: relative;
+  border-radius: 16px;
+  background: #d9d9d9;
+  overflow: hidden;
+  color: #636363;
+  text-align: center;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.425px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chumboo_btn {
+  display: flex;
+  width: 342px;
+  height: 44px;
+  border-radius: 10px;
+  border: 2px solid #93b658;
+  position: relative;
+  margin: 16px 24px 0px 24px;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+  cursor: pointer;
+}
+
+.inzug_btn {
+  display: flex;
+  width: 342px;
+  height: 48px;
+  position: relative;
+  margin: 16px 24px 0px 24px;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+  background: #93b658;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+}
+
+.stamp_area {
+  width: 344px;
+  height: 56px;
+  position: relative;
+  display: flex;
+  margin: 8px 24px;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.stampNo {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  border: 1px solid #93b658;
+  position: relative;
+}
+
+.box48 {
+  width: 342px;
+  height: 48px;
+  margin: 0px 24px;
+  position: relative;
+  display: flex;
+  cursor: pointer;
+}
+
+.box163 {
+  width: 163px;
+  height: 48px;
+  position: relative;
+  /* display: flex; */
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: -0.4px;
+  color: #636363;
+  padding: 12px 0px;
+  /* align-items: center;
+  justify-content: center; */
+}
+
+.green_line {
+  width: 163px;
+  height: 2px;
+  background: #93b658;
+  position: absolute;
+  bottom: 0px;
+}
+
+.calender {
+  width: 150px;
+  height: 150px;
+  margin: 48px 120px 10px 120px;
+  position: relative;
+}
+
+.text24 {
+  width: 254px;
+  height: 32px;
+  line-height: 32px;
+  position: relative;
+  margin: 0px 68px 4px 68px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.6px;
+}
+
+.text16 {
+  width: 154px;
+  line-height: 24px;
+  height: 24px;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.4px;
+  color: #636363;
+  position: relative;
+  margin: 0 auto;
+}
+
+.chamgaday {
+  width: 100%;
+  height: 48px;
+  display: flex;
+  position: relative;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24px;
+  align-items: center;
+  justify-content: center;
+}
+
+.chamgalist {
+  width: 390px;
+  height: 48px;
+  position: relative;
+  display: flex;
+  padding: 0px 24px;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.chamga_name {
+  width: 86px;
+  height: 20px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.4px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cham_stamp_area {
+  width: 232px;
+  height: 48px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cham_stamp {
+  width: 28px;
+  height: 28px;
+  border-radius: 100%;
+  border: 1px solid #93b658;
+  position: relative;
+  background-size: cover;
+}

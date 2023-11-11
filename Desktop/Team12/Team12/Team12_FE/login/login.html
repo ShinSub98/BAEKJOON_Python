@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
+    />
+    <link rel="stylesheet" href="login.css" />
+    <title>login</title>
+  </head>
+  <body>
+    <div class="background">
+      <div class="window">
+        <!-- 상단 바 -->
+        <div class="image-container">
+          <div class="green-bar"></div>
+          <img class="image-topbar" src="/images/circle.png" alt="" />
+          <img class="image-topbar" src="/images/circle.png" alt="" />
+          <img class="image-topbar" src="/images/circle.png" alt="" />
+          <img class="image-topbar" src="/images/circle.png" alt="" />
+          <img class="image-topbar" src="/images/circle.png" alt="" />
+        </div>
+        <!-- 로고 -->
+        <div class="login-logo">지키미션</div>
+        <!-- 로그인 -->
+        <form
+          method="POST"
+          action="https://ganzi-tkzxf.run.goorm.site/member/login/"
+          class="login-form"
+          id="form"
+        >
+          <input
+            class="login-box"
+            type="email"
+            name="email"
+            placeholder="이메일"
+            required
+          />
+          <input
+            class="login-box"
+            type="password"
+            name="password"
+            placeholder="비밀번호"
+            required
+          />
+          <button class="login-button" type="submit">로그인</button>
+        </form>
+        <!-- 회원가입 -->
+        <div class="grayArea">
+          <div class="bibun">비밀번호 찾기</div>
+          <div class="g_line"></div>
+          <button class="join-member" onclick="location.href='/join/join.html'">
+            회원가입
+          </button>
+        </div>
+
+        <!-- 하단 바 -->
+        <div class="image-container bottom" style="width: 390px">
+          <div class="green-bar-bottom"></div>
+          <img class="image-bottombar" src="/images/circle.png" alt="" />
+          <img class="image-bottombar" src="/images/circle.png" alt="" />
+          <img class="image-bottombar" src="/images/circle.png" alt="" />
+          <img class="image-bottombar" src="/images/circle.png" alt="" />
+          <img class="image-bottombar" src="/images/circle.png" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <script type="module">
+      const form = document.getElementById("form");
+
+      form.addEventListener("submit", (e) => {
+
+        const user = new FormData(form);
+        console.log(user);
+
+        fetch('https://ganzi-tkzxf.run.goorm.site/member/login/', {
+          method: 'POST',
+          body: user,
+        })
+          .then((res) => res.json())
+          .then((result) => {
+            if (result.msg == "로그인 성공") {
+              //local에 accesstoken 저장하고 페이지 이동.
+              localStorage.setItem("access_token", result.data.access_token);
+              window.location.href = "../main/main.html";
+            } else {
+              alert("로그인에 실패하였습니다.");
+            }
+          });
+      });
+    </script>
+  </body>
+</html>
